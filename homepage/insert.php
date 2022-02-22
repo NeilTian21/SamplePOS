@@ -25,7 +25,7 @@
 				icon: 'success',
 				title: 'Input Success!',
 			})
-			</script>";;}
+			</script>";}
 			
 
 		}
