@@ -19,19 +19,36 @@
 
 		<form method="POST" action="index.php">
 			<div class="form-group">
-				<label>Username:</label>
-				<input type="text" name="username" class="form-control" placeholder="Type Username" required><br />
+				<label>Stock Name:</label>
+				<input type="text" name="stock_name" class="form-control" placeholder="Type Stock Name" required><br />
 			</div>
 			<div class="form-group">
-				<label>Password:</label>
-				<input type="text" name="password" class="form-control" placeholder="Type Password" required><br />
+				<label>Stock Category:</label>
+				<select class="form-control" name="stock_category">
+					<option value="FLAVORED POWDER">FLAVORED POWDER</option>
+					<option value="FLAVORED LIQUID">FLAVORED LIQUID</option>
+					<option value="FLAVORED JAM">FLAVORED JAM</option>
+					<option value="SINKERS / ADD-ONS">SINKERS / ADD-ONS</option>
+					<option value="OTHERS">OTHERS</option>
+					<option value="MATERIALS">MATERIALS</option>
+					<option value="EGG DROP">EGG DROP</option>
+				</select><br />
 			</div>
 			<div class="form-group">
-				<label>Email:</label>
-				<input type="email" name="email" class="form-control" placeholder="Type Email" required><br />
+				<label>Unit Count:</label>
+				<input type="number" name="stock_count" class="form-control" placeholder="Stock Count" required><br />
+			</div>
+			<div class="form-group">
+				<label>Unit:</label>
+				<select class="form-control" name="stock_unit">
+					<option value="kg">kg</option>
+					<option value="g">g</option>
+					<option value="pcs">pcs</option>
+					<option value="loaf">loaf</option>
+				</select><br />
 			</div>
 			<div class="form-group">				
-				<input type="submit" name="insert" class="btn btn-warning" value="Insert Account" required><br />
+				<input type="submit" name="insert" class="btn btn-warning" value="Insert Product" required><br />
 			</div>
 		</form>
 	</div>
