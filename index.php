@@ -64,36 +64,37 @@
 	<div class="col-md-8 col-md-offset-2">
 	<table class="table table-bordered table-responsive">
 		<tr>
-			<td>User_ID</td>
-			<td>Username</td>
-			<td>Password</td>
-			<td>Email</td>
+			<td>Stock ID</td>
+			<td>Stock Name</td>
+			<td>Category</td>
+			<td>Unit Count</td>
+			<td>Unit</td>
 			<td>Action</td>
 			<td>Action</td>
 		</tr>
 
 		<?php
-			$consulta = "SELECT * FROM user_login";
+			$consulta = "SELECT * FROM TBL_INVENTORY";
 
 			$ejecutar = sqlsrv_query($oConn, $consulta);
 
 			$i = 0;
 
 			while($fila = sqlsrv_fetch_array($ejecutar)){
-				$id = $fila['id'];
-				$username = $fila['username'];
-				$email = $fila['email'];
-				$password = $fila['password'];
+				$stock_id = $fila['stock_id'];
+				$stock_name = $fila['stock_name'];
+				$stock_category = $fila['stock_category'];
+				$stock_unit_count = $fila['stock_unit_count'];
+				$stock_unit = $fila['stock_unit'];
 				$i++;
-			
-			
 		?>
 
 		<tr align="center">
-			<td><?php echo $id; ?></td>
-			<td><?php echo $username; ?></td>
-			<td><?php echo $password; ?></td>
-			<td><?php echo $email; ?></td>
+			<td><?php echo $stock_id; ?></td>
+			<td><?php echo $stock_name; ?></td>
+			<td><?php echo $stock_category; ?></td>
+			<td><?php echo $stock_unit_count; ?></td>
+			<td><?php echo $stock_unit; ?></td>
 			<td><a href="index.php?Edit=<?php echo $id; ?>">Edit</a></td>
 			<td><a href="index.php?Delete=<?php echo $id; ?>">Delete</a></td>
 		</tr>

@@ -6,7 +6,7 @@
 
   $connectionInfo = array( "UID"      =>  $uid        ,
                           "PWD"      =>  $pwd        ,
-                          "Database" =>  "SampleDB"
+                          "Database" =>  "DB_TCCI_POS_INVENTORY"
                         );
 
   $oConn = sqlsrv_connect( $serverName, $connectionInfo);
