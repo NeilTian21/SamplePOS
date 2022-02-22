@@ -1,13 +1,14 @@
 <?php
 		if(isset($_POST['insert'])){
-			$Tusername = $_POST['username'];
-			$Tpassword = $_POST['password'];
-			$Temail = $_POST['email'];
+			$Istock_name = $_POST['stock_name'];
+			$Istock_category = $_POST['stock_category'];
+			$Istock_count = $_POST['stock_count'];
+			$Istock_unit = $_POST['stock_unit'];
 
-			$InsertAccount = "INSERT INTO  user_login (username, password, email) 
-			VALUES ('$Tusername', '$Tpassword', '$Temail')";
+			$InsertAccount = "INSERT INTO  TBL_INVENTORY (stock_name, stock_category, stock_unit_count, stock_unit) 
+			VALUES ('$Istock_name', '$Istock_category', '$Istock_count', '$Istock_unit')";
 
-			$DuplicateCheck = sqlsrv_query($oConn,"SELECT * FROM user_login WHERE username LIKE '$Tusername' or email LIKE '$Temail'");
+			$DuplicateCheck = sqlsrv_query($oConn,"SELECT * FROM TBL_INVENTORY WHERE stock_name LIKE '$Istock_name'");
 			$rows = sqlsrv_fetch_array($DuplicateCheck);
 			if ($rows > 0){
 				echo "
@@ -15,7 +16,7 @@
 					Swal.fire({
 						position: 'center',
 						icon: 'error',
-						title: 'Username or Email has already existing',
+						title: 'Stock arleady in database',
 					})
 					</script>";
 			}else{
